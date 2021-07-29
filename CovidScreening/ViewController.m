@@ -30,10 +30,10 @@
 //    NSString  *str = userName.text;
 //    ", str;
     
-    //NSString *texto = [[NSString alloc] initWithFormat:@"username: %@\nPassword:  %@",[userName text],[password text]];
-//    [textView setText:texto];
+    NSString *texto = [[NSString alloc] initWithFormat:@"username: %@\nPassword:  %@",[userName text],[password text]];
+    [textView setText:texto];
     
-    textView.text = @"username:  @[userName.]";
+//    textView.text = @"username:  @[userName.]";
     
    
     
