@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,35)];
+    
+    
     return YES;
 }
 

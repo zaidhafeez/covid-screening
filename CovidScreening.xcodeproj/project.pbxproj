@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0650C126B424AD00898FC6 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0650C026B424AD00898FC6 /* GradientView.m */; };
 		1C3EC6ED26B278F10025AE03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC6EC26B278F10025AE03 /* AppDelegate.m */; };
 		1C3EC6F026B278F10025AE03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC6EF26B278F10025AE03 /* ViewController.m */; };
 		1C3EC6F326B278F10025AE03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EC6F126B278F10025AE03 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C0650BF26B424AD00898FC6 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		1C0650C026B424AD00898FC6 /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		1C3EC6E826B278F10025AE03 /* CovidScreening.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidScreening.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3EC6EB26B278F10025AE03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1C3EC6EC26B278F10025AE03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 			children = (
 				1C3EC6EB26B278F10025AE03 /* AppDelegate.h */,
 				1C3EC6EC26B278F10025AE03 /* AppDelegate.m */,
+				1C0650BF26B424AD00898FC6 /* GradientView.h */,
+				1C0650C026B424AD00898FC6 /* GradientView.m */,
 				1C3EC6EE26B278F10025AE03 /* ViewController.h */,
 				1C3EC6EF26B278F10025AE03 /* ViewController.m */,
 				1C3EC6F126B278F10025AE03 /* Main.storyboard */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0650C126B424AD00898FC6 /* GradientView.m in Sources */,
 				1C3EC6F626B278F10025AE03 /* CovidScreening.xcdatamodeld in Sources */,
 				1C3EC6F026B278F10025AE03 /* ViewController.m in Sources */,
 				1C3EC6FE26B278F80025AE03 /* main.m in Sources */,
