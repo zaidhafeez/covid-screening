@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GradientView.h"
 @interface ViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *mobileNumber;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIView *Main;
+
 
 
 

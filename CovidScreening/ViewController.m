@@ -24,17 +24,22 @@
     password.delegate = self;
     mobileNumber.delegate = self;
     
+    GradientView *gv = [[GradientView alloc] init];
+    
+    [gv gradientLayer:Main];
+    
+    
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,350)];
 
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = Main.bounds;
-    gradient.startPoint = CGPointZero;
-    gradient.endPoint = CGPointMake(1, 1);
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:34.0/255.0 green:211/255.0 blue:198/255.0 alpha:1.0] CGColor],(id)[[UIColor colorWithRed:145/255.0 green:72.0/255.0 blue:203/255.0 alpha:1.0] CGColor], nil];
-    
-//    gradient.colors = [UIColor.blackColor.CGColor,UIColor.blueColor.];
-    
-    [Main.layer insertSublayer:gradient atIndex:0];
+//    CAGradientLayer *gradient = [CAGradientLayer layer];
+//    gradient.frame = Main.bounds;
+//    gradient.startPoint = CGPointZero;
+//    gradient.endPoint = CGPointMake(1, 1);
+//    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:34.0/255.0 green:211/255.0 blue:198/255.0 alpha:1.0] CGColor],(id)[[UIColor colorWithRed:145/255.0 green:72.0/255.0 blue:203/255.0 alpha:1.0] CGColor], nil];
+//    
+////    gradient.colors = [UIColor.blackColor.CGColor,UIColor.blueColor];
+//    
+//    [Main.layer insertSublayer:gradient atIndex:0];
     
   //  Main.backgroundColor = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:34.0/255.0 green:211/255.0 blue:198/255.0 alpha:1.0] CGColor],(id)[[UIColor colorWithRed:145/255.0 green:72.0/255.0 blue:203/255.0 alpha:1.0] CGColor], nil];
 //    Main.backgroundColor = gradient.colors;
@@ -52,6 +57,8 @@
     
     textView.text = [NSString stringWithFormat:@"Username: %@\nPassword: %@\nMobile Number: %@",userName.text,password.text,mobileNumber.text ];
     
+    
+    
    
     
 }
@@ -59,6 +66,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [mobileNumber resignFirstResponder];
+    [userName resignFirstResponder];
+    [password resignFirstResponder];
 }
 
 -(bool)textFieldShouldReturn:(UITextField *)textField{

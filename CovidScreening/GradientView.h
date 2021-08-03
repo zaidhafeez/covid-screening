@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) IBInspectable UIColor *FirstColor;
 @property (nonatomic) IBInspectable UIColor *SecondColor;
 
+-(void)gradientLayer:(UIView *)view;
+
 @end
 
 NS_ASSUME_NONNULL_END
