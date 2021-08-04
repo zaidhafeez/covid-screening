@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-IB_DESIGNABLE
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GradientView : UIView

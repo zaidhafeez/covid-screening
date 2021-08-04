@@ -8,32 +8,47 @@
 
 #import "SecondViewController.h"
 
+
 @interface SecondViewController ()
 
 @end
 
 @implementation SecondViewController
 
-@synthesize nextView,QuestionLabel,nextButton;
+@synthesize nextView, QuestionLabel,nextButton, nextIndex;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     GradientView *gv = [[GradientView alloc] init];
+
+    nextIndex = 0;
     
     [gv gradientLayer:nextView];
     
+}
+
+-(void)changeQuestion:(int)nextIndex {
     
+    ScreeningQA *sQA = [[ScreeningQA alloc] init];
     
+    NSLog(@"nextIndex %d", nextIndex);
+    NSLog(@"Array size %lu", (unsigned long)[sQA.questionArray count]);
     
-    
+//
+//
+    if(nextIndex < [sQA.questionArray count]){
+
+        QuestionLabel.text = sQA.questionArray[nextIndex];
+    }
     
     
 }
+
 - (IBAction)nextButtonClicked:(UIButton *)sender {
     
-    QuestionLabel.text = @"Zaid";
-    NSLog(@"action method");
+    [self changeQuestion:nextIndex];
+    nextIndex++;
     
 }
 

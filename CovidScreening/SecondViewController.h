@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "GradientView.h"
+#import "ScreeningQA.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondViewController : UIViewController
 
+  
+
+
+//extern int nextIndex;
 @property (strong, nonatomic) IBOutlet UIView *nextView;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (nonatomic, assign) int nextIndex;
 
+-(void)changeQuestion:(int)nextIndex;
 
 @end
 
