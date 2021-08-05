@@ -15,7 +15,7 @@
 
 @implementation SecondViewController
 
-@synthesize nextView, QuestionLabel,nextButton, nextIndex;
+@synthesize nextView, QuestionLabel,nextButton, nextIndex, scroll;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +25,9 @@
     nextIndex = 0;
     
     [gv gradientLayer:nextView];
+    
+    [scroll setScrollEnabled:YES];
+    [scroll setContentSize:CGSizeMake(350, 650)];
     
 }
 
@@ -40,6 +43,7 @@
     if(nextIndex < [sQA.questionArray count]){
 
         QuestionLabel.text = sQA.questionArray[nextIndex];
+        [QuestionLabel sizeToFit];
     }
     
     

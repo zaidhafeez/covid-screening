@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *QuestionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (nonatomic, assign) int nextIndex;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 
 -(void)changeQuestion:(int)nextIndex;
 
