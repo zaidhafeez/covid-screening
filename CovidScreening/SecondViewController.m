@@ -15,7 +15,7 @@
 
 @implementation SecondViewController
 
-@synthesize nextView, QuestionLabel,nextButton, nextIndex, scroll;
+@synthesize nextView, QuestionLabel,nextButton, nextIndex, scroll,Submit;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,22 +35,39 @@
     
     ScreeningQA *sQA = [[ScreeningQA alloc] init];
     
-    NSLog(@"nextIndex %d", nextIndex);
-    NSLog(@"Array size %lu", (unsigned long)[sQA.questionArray count]);
+//    NSLog(@"nextIndex %d", nextIndex);
+    NSLog(@"Array size %lu", (unsigned long)[sQA.answers count]);
+    
+    long length = (unsigned long)[sQA.answers count];
     
 //
 //
-    if(nextIndex < [sQA.questionArray count]){
-
+    if(nextIndex < [sQA.answers count]){
+        
+        if (nextIndex ==  length - 1) {
+            [Submit setHidden:NO];
+            [nextButton setHidden:YES];
+        }
+        
+        NSLog(@"next index: %d", nextIndex);
+//        for(int i = 0 ; i < [sQA.answers[nextIndex] count]; i++){
+//            NSLog(@"value: %d, %lu",i,  (unsigned long)[sQA.answers[nextIndex] count]);
+//            NSLog(@"answer option: %@", sQA.answers[nextIndex][i]);
+////            QuestionLabel.text = sQA.answers[nextIndex][i];
+////            [QuestionLabel sizeToFit];
+//
+//        }
         QuestionLabel.text = sQA.questionArray[nextIndex];
-        [QuestionLabel sizeToFit];
+            [QuestionLabel sizeToFit];
     }
+        
     
     
 }
 
 - (IBAction)nextButtonClicked:(UIButton *)sender {
     
+//    QuestionLabel.backgroundColor = [UIColor clearColor];
     [self changeQuestion:nextIndex];
     nextIndex++;
     

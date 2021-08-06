@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (nonatomic, assign) int nextIndex;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
+@property (weak, nonatomic) IBOutlet UIButton *Submit;
 
 -(void)changeQuestion:(int)nextIndex;
 

@@ -13,10 +13,6 @@
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         
-        ScreeningQA *sQA = [[ScreeningQA alloc] init];
-        
-        NSLog(@"Que:- %@",[sQA questionArray]);
-        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
         
         
