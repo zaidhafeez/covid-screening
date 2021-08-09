@@ -15,7 +15,7 @@
 
 @implementation SecondViewController
 
-@synthesize nextView, QuestionLabel,nextButton, nextIndex, scroll,Submit;
+@synthesize nextView, QuestionLabel,nextButton, nextIndex,Submit;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,11 +23,8 @@
     GradientView *gv = [[GradientView alloc] init];
 
     nextIndex = 0;
-    
     [gv gradientLayer:nextView];
     
-    [scroll setScrollEnabled:YES];
-    [scroll setContentSize:CGSizeMake(350, 650)];
     
 }
 
@@ -38,11 +35,11 @@
 //    NSLog(@"nextIndex %d", nextIndex);
     NSLog(@"Array size %lu", (unsigned long)[sQA.answers count]);
     
-    long length = (unsigned long)[sQA.answers count];
+    long length = (unsigned long)[sQA.questionArray count];
     
 //
 //
-    if(nextIndex < [sQA.answers count]){
+    if(nextIndex < [sQA.questionArray count]){
         
         if (nextIndex ==  length - 1) {
             [Submit setHidden:NO];
@@ -65,11 +62,16 @@
     
 }
 
-- (IBAction)nextButtonClicked:(UIButton *)sender {
+- (void)changeAnswer{
     
+}
+
+- (IBAction)nextButtonClicked:(UIButton *)sender {
 //    QuestionLabel.backgroundColor = [UIColor clearColor];
     [self changeQuestion:nextIndex];
     nextIndex++;
+//    [nextView addSubview:_answerTable];
+    [_answerTable reloadData];
     
 }
 
@@ -82,5 +84,43 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    NSLog(@"Table view cell loaded %d",nextIndex);
+    
+    ScreeningQA *sQA = [[ScreeningQA alloc] init];
+    
+    static NSString *cellId = @"SimpleTableId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        
+    }
+    
+    if(nextIndex >= 1){
+    
+        NSArray *tempArray = sQA.answers[nextIndex - 1];
+        cell.textLabel.text = [tempArray objectAtIndex:[indexPath row]];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        
+    }
+    return cell;
+    
+    
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    ScreeningQA *sQA = [[ScreeningQA alloc] init];
+    NSLog(@"cellfor1 %d", nextIndex);
+    if (nextIndex >= 1) {
+        return [sQA.answers[nextIndex - 1] count];
+    }
+    return 0;
+}
+
 
 @end
