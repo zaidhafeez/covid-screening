@@ -11,26 +11,48 @@
 @interface ViewController ()
 {
     NSArray *country;
+    NSArray *state;
+    NSArray *district;
 }
 
 @end
 
 @implementation ViewController
 
-@synthesize userName,password,mobileNumber,textView,Main;
+@synthesize userName,password,mobileNumber,Main,countryPickerView,statePickerView;
 
 
 
 - (IBAction)didSelectCountry:(UIButton *)sender {
+
+//    if([_countryPickerView isHidden]){
+//
+//        [_countryPickerView setHidden:false];
+//        [_countryTextField resignFirstResponder];
     
-    if([_countryPickerView isHidden]){
-        
-        [_countryPickerView setHidden:false];
-        [_countryTextField resignFirstResponder];
-        
-    }
+    [_countryTextField becomeFirstResponder];
+    [_countryTextField becomeFirstResponder];
+    [_countryTextField becomeFirstResponder];
+
+//
+//    }
+
+}
+
+- (IBAction)didSelectStateTapped:(UIButton *)sender {
+    
+    [_stateTextField becomeFirstResponder];
     
 }
+- (IBAction)didSelectDistrict:(UIButton *)sender {
+    
+    [_districtTextField becomeFirstResponder];
+    
+}
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,8 +61,25 @@
     password.delegate = self;
     mobileNumber.delegate = self;
     
-    _countryPickerView.dataSource = self;
-    _countryPickerView.delegate = self;
+    countryPickerView = [[UIPickerView alloc] init];
+    countryPickerView.dataSource = self;
+    countryPickerView.delegate = self;
+    
+    statePickerView = [[UIPickerView alloc] init];
+    statePickerView.dataSource = self;
+    statePickerView.delegate = self;
+    
+    _districtPickerView = [[UIPickerView alloc] init];
+    _districtPickerView.delegate = self;
+    _districtPickerView.dataSource = self;
+    
+    _countryTextField.inputView = countryPickerView;
+    _stateTextField.inputView = statePickerView;
+    _districtTextField.inputView = _districtPickerView;
+//    _stateTextField.inputAccessoryView = pickerView;
+    
+//    _countryPickerView.dataSource = self;
+//    _countryPickerView.delegate = self;
     
     
     
@@ -48,15 +87,23 @@
     
     [gv gradientLayer:Main];
     
-    [_countryPickerView setHidden:true];
+//    [_countryPickerView setHidden:true];
     
     country = @[@"Japan",@"Singapore",@"China",@"India",@"South Korea"];
+    state = @[@"U.P",@"H.P",@"M.P"];
+    district = @[@"Mau",@"Aligarh",@"Delhi"];
+    
+    
+    countryPickerView.tag = 1;
+    statePickerView.tag = 2;
+    _districtPickerView.tag = 3;
+    
     
 }
 
 - (IBAction)enterButtonClicked:(id)sender {
     
-    textView.text = [NSString stringWithFormat:@"Username: %@\nPassword: %@\nMobile Number: %@",userName.text,password.text,mobileNumber.text ];
+//    textView.text = [NSString stringWithFormat:@"Username: %@\nPassword: %@\nMobile Number: %@",userName.text,password.text,mobileNumber.text ];
     
 }
 
@@ -67,6 +114,8 @@
     [userName resignFirstResponder];
     [password resignFirstResponder];
     [_countryTextField resignFirstResponder];
+    [_stateTextField resignFirstResponder];
+    [_districtTextField resignFirstResponder];
     
 }
 
@@ -84,19 +133,56 @@
 
 - (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return country.count;
+    switch (pickerView.tag) {
+        case 1:
+            return country.count;
+            break;
+        case 2:
+            return state.count;
+            break;
+        case 3:
+            return district.count;
+        default:
+            return 1;
+            break;
+    }
     
 }
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    return country[row];
+    switch (pickerView.tag) {
+        case 1:
+            return country[row];
+            break;
+        case 2:
+            return state[row];
+            break;
+        case 3:
+            return district[row];
+        default:
+            return @"data not found";
+            break;
+    }
     
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    _countryTextField.text = country[row];
-    [_countryPickerView setHidden:true];
+    switch (pickerView.tag) {
+        case 1:
+            _countryTextField.text = country[row];
+            break;
+            
+        case 2:
+            _stateTextField.text =  state[row];
+            break;
+            
+        case 3:
+            _districtTextField.text =  district[row];
+            break;
+            
+    }
+    
     
 }
 
