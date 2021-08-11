@@ -10,7 +10,9 @@
 
 
 @interface SecondViewController ()
-
+{
+    NSMutableArray *temp;
+}
 @end
 
 @implementation SecondViewController
@@ -21,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     GradientView *gv = [[GradientView alloc] init];
+    temp = [[NSMutableArray alloc] init];
 
     nextIndex = 0;
     [gv gradientLayer:nextView];
@@ -71,7 +74,12 @@
     [self changeQuestion:nextIndex];
     nextIndex++;
 //    [nextView addSubview:_answerTable];
+    
     [_answerTable reloadData];
+    
+    
+    
+    
     
 }
 
@@ -106,7 +114,21 @@
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         
+        
     }
+    
+    if([tableView indexPathsForSelectedRows] == temp){
+
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
+    }
+    else {
+
+        cell.accessoryType = UITableViewCellAccessoryNone;
+
+    }
+    
+//    cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
     
     
@@ -119,8 +141,22 @@
     if (nextIndex >= 1) {
         return [sQA.answers[nextIndex - 1] count];
     }
+    
     return 0;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        temp add;
+    
+
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+
+}
 
 @end

@@ -12,15 +12,19 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectCountry;
 @property (weak, nonatomic) IBOutlet UIButton *selectState;
 @property (weak, nonatomic) IBOutlet UIButton *selectDistrict;
+@property (weak, nonatomic) IBOutlet UIButton *selectGender;
 @property (weak, nonatomic) IBOutlet UITextField *countryTextField;
 @property (weak, nonatomic) IBOutlet UITextField *stateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *districtTextField;
+@property (weak, nonatomic) IBOutlet UITextField *genderTextField;
+
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *mobileNumber;
 @property (nonatomic, retain) UIPickerView *countryPickerView;
 @property (nonatomic, retain) UIPickerView *statePickerView;
 @property (nonatomic, retain) UIPickerView *districtPickerView;
+@property (nonatomic, retain) UIPickerView *genderPickerView;
 @property (strong, nonatomic) IBOutlet UIView *Main;
 
 
