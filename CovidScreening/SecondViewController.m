@@ -12,6 +12,8 @@
 @interface SecondViewController ()
 {
     NSMutableArray *temp;
+    NSArray *arr;
+    NSIndexPath *newIndex;
 }
 @end
 
@@ -22,8 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     GradientView *gv = [[GradientView alloc] init];
     temp = [[NSMutableArray alloc] init];
+    newIndex = [[NSIndexPath alloc] init];
 
     nextIndex = 0;
     [gv gradientLayer:nextView];
@@ -70,16 +74,16 @@
 }
 
 - (IBAction)nextButtonClicked:(UIButton *)sender {
+    
+    [_answerTable setHidden:NO];
 //    QuestionLabel.backgroundColor = [UIColor clearColor];
     [self changeQuestion:nextIndex];
     nextIndex++;
-//    [nextView addSubview:_answerTable];
+
+
+    
     
     [_answerTable reloadData];
-    
-    
-    
-    
     
 }
 
@@ -92,6 +96,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    ScreeningQA *sQA = [[ScreeningQA alloc] init];
+    NSLog(@"cellfor1 %d", nextIndex);
+    if (nextIndex >= 1) {
+        
+        return [sQA.answers[nextIndex - 1] count];
+    }
+    
+    return 0;
+}
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSLog(@"Table view cell loaded %d",nextIndex);
@@ -117,7 +133,9 @@
         
     }
     
-    if([tableView indexPathsForSelectedRows] == temp){
+    if([tableView indexPathForSelectedRow] == newIndex){
+
+        NSLog(@"Array %@", temp);
 
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
 
@@ -128,27 +146,36 @@
 
     }
     
-//    cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    
+    
     return cell;
     
     
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    ScreeningQA *sQA = [[ScreeningQA alloc] init];
-    NSLog(@"cellfor1 %d", nextIndex);
-    if (nextIndex >= 1) {
-        return [sQA.answers[nextIndex - 1] count];
-    }
-    
-    return 0;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-        temp add;
+    
+    newIndex = indexPath;
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    
+//
+//
+//        NSLog(@"Hello checkMark");
+//        [temp addObject:indexPath];
+//    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        // Reflect selection in data model
+//    } else if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//        // Reflect deselection in data model
+//    }
+    
+    
+    
     
 
 }
@@ -156,7 +183,7 @@
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-
+    [temp removeObject:indexPath];
 }
 
 @end
