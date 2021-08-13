@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectState;
 @property (weak, nonatomic) IBOutlet UIButton *selectDistrict;
 @property (weak, nonatomic) IBOutlet UIButton *selectGender;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UITextField *countryTextField;
 @property (weak, nonatomic) IBOutlet UITextField *stateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *districtTextField;

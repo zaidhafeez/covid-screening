@@ -20,7 +20,7 @@
 
 @implementation ViewController
 
-@synthesize userName,password,mobileNumber,Main,countryPickerView,statePickerView;
+@synthesize userName,password,mobileNumber,Main,countryPickerView,statePickerView,registerButton;
 
 /***********************/
 /* Start */
@@ -36,14 +36,26 @@
     /* Editing background start */
     /***********************/
     
-    GradientView *gv = [[GradientView alloc] init];
-    
-    [gv gradientLayer:Main];
+//    GradientView *gv = [[GradientView alloc] init];
+//    
+//    [gv gradientLayer:Main];
     
     /***********************/
     /* Editing background end */
     /***********************/
 
+    
+//    / Register button edit
+    registerButton.alpha = 1;
+    registerButton.layer.cornerRadius = 22.0;
+    registerButton.layer.shadowColor = [[UIColor blackColor] CGColor];
+    registerButton.layer.shadowOpacity = 0.3;
+    registerButton.layer.shadowRadius = 20;
+    registerButton.layer.shadowOffset = CGSizeMake(0.0, 5.0);
+    
+    
+    
+    
     
     /***********************/
     /* Assigning data values into array to show in pickerview */
@@ -125,7 +137,7 @@
     /***********************/
 
 }
-
+   /* End */
 /* Did load method End */
 
 /***********************/

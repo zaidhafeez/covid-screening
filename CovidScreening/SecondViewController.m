@@ -25,12 +25,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    GradientView *gv = [[GradientView alloc] init];
+//    GradientView *gv = [[GradientView alloc] init];
     temp = [[NSMutableArray alloc] init];
     newIndex = [[NSIndexPath alloc] init];
 
     nextIndex = 0;
-    [gv gradientLayer:nextView];
+//    [gv gradientLayer:nextView];
+    
+    nextButton.layer.cornerRadius = 25;
+    nextButton.layer.shadowColor = [[UIColor greenColor] CGColor];
+    
+    nextButton.layer.shadowRadius = 25.0;
+    
+    nextButton.layer.shadowOpacity = 0.3;
+    
+    nextButton.layer.shadowOffset = CGSizeMake(0.0, 5.0);
+    
+    
     
     
 }

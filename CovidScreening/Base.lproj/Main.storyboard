@@ -44,13 +44,13 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-v5-lcd">
                                 <rect key="frame" x="16" y="576" width="343" height="51"/>
-                                <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="9pv-aq-HDf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XXa-nB-FAN"/>
@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.8666666666666667" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="t1l-Xu-g8Y" firstAttribute="top" secondItem="2B4-v7-Vzk" secondAttribute="bottom" constant="15" id="0FQ-xQ-fdC"/>
                             <constraint firstItem="ldh-CA-L94" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1hu-Tu-gto"/>
@@ -179,6 +179,7 @@
                         <outlet property="genderTextField" destination="LCm-nd-XfX" id="mRy-uT-3bP"/>
                         <outlet property="mobileNumber" destination="t1l-Xu-g8Y" id="suI-yQ-qub"/>
                         <outlet property="password" destination="2B4-v7-Vzk" id="5a9-l2-A9g"/>
+                        <outlet property="registerButton" destination="0OT-v5-lcd" id="sUT-5U-hVi"/>
                         <outlet property="selectCountry" destination="vKw-Xt-tSB" id="YU4-hI-QIG"/>
                         <outlet property="selectDistrict" destination="h7Y-GA-GfO" id="0gf-Ed-Rcg"/>
                         <outlet property="selectGender" destination="ljJ-lc-gbY" id="KPo-ax-89V"/>
@@ -199,13 +200,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCe-Ke-Rk5">
-                                <rect key="frame" x="16" y="588" width="343" height="44"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCe-Ke-Rk5">
+                                <rect key="frame" x="150" y="589" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="tintColor" red="1" green="0.86734245809999999" blue="0.31581848979999999" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" backgroundImage="next (1)">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.93743884560000001" green="0.0" blue="0.15284013930000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -223,18 +224,10 @@
                                     <outlet property="delegate" destination="yPw-ag-RLM" id="Oih-59-xcN"/>
                                 </connections>
                             </tableView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-HG-nOo">
-                                <rect key="frame" x="112" y="588" width="149" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWr-Ef-rEu">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.33586543798446655" green="0.98905688524246216" blue="0.00011291474220342934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Covid screening" id="e2z-M7-EtM"/>
                                 </items>
@@ -246,8 +239,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-HG-nOo">
+                                <rect key="frame" x="113" y="588" width="149" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.8666666666666667" blue="0.88235294117647056" alpha="0.70336579623287676" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Pig-BI-a53"/>
                     </view>
                     <connections>
@@ -263,4 +265,7 @@
             <point key="canvasLocation" x="608.79999999999995" y="53.523238380809602"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="next (1)" width="512" height="512"/>
+    </resources>
 </document>
