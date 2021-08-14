@@ -33,15 +33,24 @@
 //    [gv gradientLayer:nextView];
     
     nextButton.layer.cornerRadius = 25;
-    nextButton.layer.shadowColor = [[UIColor greenColor] CGColor];
+    nextButton.layer.shadowColor = [[UIColor blackColor] CGColor];
     
     nextButton.layer.shadowRadius = 25.0;
     
-    nextButton.layer.shadowOpacity = 0.3;
+    nextButton.layer.shadowOpacity = 0.5;
     
     nextButton.layer.shadowOffset = CGSizeMake(0.0, 5.0);
     
+    _answerTable.layer.cornerRadius = 20;
+    _answerTable.layer.shadowColor = [[UIColor blackColor] CGColor];
     
+    _answerTable.layer.shadowRadius = 25.0;
+    
+    _answerTable.layer.shadowOpacity = 0.5;
+    
+    _answerTable.layer.shadowOffset = CGSizeMake(0.0, 5.0);
+    
+    self.nextView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     
     
 }

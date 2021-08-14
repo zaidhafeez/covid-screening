@@ -31,7 +31,9 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+//    self.Main.backgroundColor = UIColor[(patternImage: UIImage(named: "background.png"))]
+    
+    self.Main.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     /***********************/
     /* Editing background start */
     /***********************/
@@ -92,17 +94,37 @@
     countryPickerView.dataSource = self;
     countryPickerView.delegate = self;
     
+    UIToolbar *toolBar = [[UIToolbar alloc] init];
+    toolBar.barStyle = UIBarStyleDefault;
+    toolBar.tintColor = [UIColor orangeColor];
+    [toolBar sizeToFit];
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(action)];
+    
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(action)];
+    
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    NSArray *buttons = [NSArray arrayWithObjects: cancel, flexibleSpace, done, nil];
+    [toolBar setItems: buttons animated:false];
+    
+    
+    
+    
     statePickerView = [[UIPickerView alloc] init];
     statePickerView.dataSource = self;
     statePickerView.delegate = self;
+    statePickerView.backgroundColor = [UIColor whiteColor];
+    
 
     _districtPickerView = [[UIPickerView alloc] init];
     _districtPickerView.delegate = self;
     _districtPickerView.dataSource = self;
+    _districtPickerView.backgroundColor = [UIColor whiteColor];
     
     _genderPickerView = [[UIPickerView alloc] init];
     _genderPickerView.delegate = self;
     _genderPickerView.dataSource = self;
+    _genderPickerView.backgroundColor = [UIColor whiteColor];
     
     /***********************/
     /* End  assigning picker view*/
@@ -131,6 +153,11 @@
     _stateTextField.inputView = statePickerView;
     _districtTextField.inputView = _districtPickerView;
     _genderTextField.inputView = _genderPickerView;
+    
+    _countryTextField.inputAccessoryView = toolBar;
+    _stateTextField.inputAccessoryView = toolBar;
+    _districtTextField.inputAccessoryView = toolBar;
+    _genderTextField.inputAccessoryView = toolBar;
     
     /***********************/
     /* End */

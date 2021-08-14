@@ -12,11 +12,11 @@
 		1C3EC6F026B278F10025AE03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC6EF26B278F10025AE03 /* ViewController.m */; };
 		1C3EC6F326B278F10025AE03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EC6F126B278F10025AE03 /* Main.storyboard */; };
 		1C3EC6F626B278F10025AE03 /* CovidScreening.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC6F426B278F10025AE03 /* CovidScreening.xcdatamodeld */; };
-		1C3EC6F826B278F80025AE03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EC6F726B278F80025AE03 /* Assets.xcassets */; };
 		1C3EC6FB26B278F80025AE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EC6F926B278F80025AE03 /* LaunchScreen.storyboard */; };
 		1C3EC6FE26B278F80025AE03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC6FD26B278F80025AE03 /* main.m */; };
 		1C3EC70826B278F80025AE03 /* CovidScreeningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC70726B278F80025AE03 /* CovidScreeningTests.m */; };
 		1C3EC71326B278F80025AE03 /* CovidScreeningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC71226B278F80025AE03 /* CovidScreeningUITests.m */; };
+		1C7E3DD026C7ABC400D8477D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */; };
 		1C8236BE26B90C390091B7A0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8236BD26B90C390091B7A0 /* SecondViewController.m */; };
 		1CEDD57826BA73A300C45940 /* ScreeningQA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEDD57726BA73A300C45940 /* ScreeningQA.m */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,6 @@
 		1C3EC6EF26B278F10025AE03 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1C3EC6F226B278F10025AE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C3EC6F526B278F10025AE03 /* CovidScreening.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CovidScreening.xcdatamodel; sourceTree = "<group>"; };
-		1C3EC6F726B278F80025AE03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C3EC6FA26B278F80025AE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C3EC6FC26B278F80025AE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C3EC6FD26B278F80025AE03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		1C3EC70E26B278F80025AE03 /* CovidScreeningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidScreeningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3EC71226B278F80025AE03 /* CovidScreeningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CovidScreeningUITests.m; sourceTree = "<group>"; };
 		1C3EC71426B278F80025AE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C8236BC26B90C390091B7A0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		1C8236BD26B90C390091B7A0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1CEDD57626BA73A300C45940 /* ScreeningQA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreeningQA.h; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				1C8236BC26B90C390091B7A0 /* SecondViewController.h */,
 				1C8236BD26B90C390091B7A0 /* SecondViewController.m */,
 				1C3EC6F126B278F10025AE03 /* Main.storyboard */,
-				1C3EC6F726B278F80025AE03 /* Assets.xcassets */,
+				1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */,
 				1C3EC6F926B278F80025AE03 /* LaunchScreen.storyboard */,
 				1C3EC6FC26B278F80025AE03 /* Info.plist */,
 				1C3EC6FD26B278F80025AE03 /* main.m */,
@@ -254,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C3EC6FB26B278F80025AE03 /* LaunchScreen.storyboard in Resources */,
-				1C3EC6F826B278F80025AE03 /* Assets.xcassets in Resources */,
+				1C7E3DD026C7ABC400D8477D /* Assets.xcassets in Resources */,
 				1C3EC6F326B278F10025AE03 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
