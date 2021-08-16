@@ -100,13 +100,14 @@
     toolBar.tintColor = [UIColor orangeColor];
     [toolBar sizeToFit];
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone)];
-    
-    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(action)];
+//    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(action)];
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    NSArray *buttons = [NSArray arrayWithObjects: cancel, flexibleSpace, done, nil];
-    [toolBar setItems: buttons animated:false];
+//    NSArray *buttons = [NSArray arrayWithObjects: cancel, flexibleSpace, done, nil];
+    
+    [toolBar setItems:[NSArray arrayWithObjects:flexibleSpace, done, nil]  animated:false];
+    
     
     
     
