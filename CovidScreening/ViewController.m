@@ -93,12 +93,13 @@
     countryPickerView = [[UIPickerView alloc] init];
     countryPickerView.dataSource = self;
     countryPickerView.delegate = self;
+    countryPickerView.backgroundColor = [UIColor whiteColor];
     
     UIToolbar *toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleDefault;
     toolBar.tintColor = [UIColor orangeColor];
     [toolBar sizeToFit];
-    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(action)];
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone)];
     
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(action)];
     
@@ -192,6 +193,13 @@
     
     [_genderTextField becomeFirstResponder];
     
+}
+
+-(void)didTapDone {
+    [_genderTextField resignFirstResponder];
+    [_districtTextField resignFirstResponder];
+    [_stateTextField resignFirstResponder];
+    [_countryTextField resignFirstResponder];
 }
 
 /***********************/
