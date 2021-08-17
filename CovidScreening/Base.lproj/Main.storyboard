@@ -42,8 +42,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-v5-lcd">
-                                <rect key="frame" x="16" y="576" width="343" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-v5-lcd">
+                                <rect key="frame" x="16" y="596" width="343" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="9pv-aq-HDf"/>
@@ -53,8 +53,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XXa-nB-FAN"/>
-                                    <segue destination="yPw-ag-RLM" kind="presentation" id="DlF-N1-wB9"/>
+                                    <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIa-qx-WKK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkN-8e-I2C">
@@ -239,7 +238,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.86734245809999999" blue="0.31581848979999999" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="right-arrow"/>
+                                <state key="normal" backgroundImage="right-arrow"/>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="yPw-ag-RLM" eventType="touchUpInside" id="sFN-aW-TQv"/>
                                 </connections>

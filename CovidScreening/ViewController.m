@@ -37,7 +37,8 @@
     /***********************/
     /* Editing background start */
     /***********************/
-    
+//    registerButton.userInteractionEnabled = false;
+//    [self checkTextField];
 //    GradientView *gv = [[GradientView alloc] init];
 //    
 //    [gv gradientLayer:Main];
@@ -45,6 +46,7 @@
     /***********************/
     /* Editing background end */
     /***********************/
+    
 
     
 //    / Register button edit
@@ -160,6 +162,7 @@
     _stateTextField.inputAccessoryView = toolBar;
     _districtTextField.inputAccessoryView = toolBar;
     _genderTextField.inputAccessoryView = toolBar;
+
     
     /***********************/
     /* End */
@@ -203,6 +206,20 @@
     [_countryTextField resignFirstResponder];
 }
 
+//-(void)checkTextField{
+//    NSLog(@"checkfield running");
+//    if(!registerButton.userInteractionEnabled){
+//
+//        if([userName hasText] && [password hasText] && [mobileNumber hasText]){
+//
+//            NSLog(@"hello i have not any text");
+//            registerButton.userInteractionEnabled = true;
+//
+//        }
+//
+//    }
+//}
+
 /***********************/
 /* button method */
 /* End */
@@ -213,6 +230,21 @@
 - (IBAction)enterButtonClicked:(id)sender {
     
 //    textView.text = [NSString stringWithFormat:@"Username: %@\nPassword: %@\nMobile Number: %@",userName.text,password.text,mobileNumber.text ];
+    
+//    if([userName hasText] && [password hasText] && [mobileNumber hasText]){
+//
+//        NSLog(@"hello i have not any text");
+//        registerButton.userInteractionEnabled = true;
+//
+//    }
+//    else{
+////        registerButton.userInteractionEnabled = false;
+//        NSLog(@"i am else");
+//    }
+    
+    NSLog(@"Now I am running");
+    
+    
     
 }
 
@@ -244,6 +276,20 @@
 /* keyboard hide action on pressing enter */
 /***********************/
 -(bool)textFieldShouldReturn:(UITextField *)textField {
+    
+    if ([textField hasText])
+    {
+        //do your work
+        NSLog(@"length %lu", textField.text.length);
+//        NSLog(@"length %@", textField.text != nil);
+//        NSLog(@"length %@", [textField.text isEqual:@""] );
+        NSLog(@"I have a number");
+    }
+    else
+    {
+        NSLog(@"I don't have a number");
+        //through error
+    }
     
     return [textField resignFirstResponder];
     
