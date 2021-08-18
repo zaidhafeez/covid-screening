@@ -20,7 +20,7 @@
 
 @implementation ViewController
 
-@synthesize userName,password,mobileNumber,Main,countryPickerView,statePickerView,registerButton;
+@synthesize userName,password,mobileNumber,Main,countryPickerView,statePickerView,registerButton,countryTextField,stateTextField,genderTextField,districtTextField;
 
 /***********************/
 /* Start */
@@ -56,6 +56,8 @@
     registerButton.layer.shadowOpacity = 0.3;
     registerButton.layer.shadowRadius = 20;
     registerButton.layer.shadowOffset = CGSizeMake(0.0, 5.0);
+    
+    registerButton.userInteractionEnabled = false;
     
     
     
@@ -153,15 +155,17 @@
     /* Set the input view as a PickerView*/
     /***********************/
     
-    _countryTextField.inputView = countryPickerView;
-    _stateTextField.inputView = statePickerView;
-    _districtTextField.inputView = _districtPickerView;
-    _genderTextField.inputView = _genderPickerView;
+    countryTextField.inputView = countryPickerView;
+    stateTextField.inputView = statePickerView;
+    districtTextField.inputView = _districtPickerView;
+    genderTextField.inputView = _genderPickerView;
     
-    _countryTextField.inputAccessoryView = toolBar;
-    _stateTextField.inputAccessoryView = toolBar;
-    _districtTextField.inputAccessoryView = toolBar;
-    _genderTextField.inputAccessoryView = toolBar;
+    countryTextField.inputAccessoryView = toolBar;
+    stateTextField.inputAccessoryView = toolBar;
+    districtTextField.inputAccessoryView = toolBar;
+    genderTextField.inputAccessoryView = toolBar;
+    
+    registerButton.hidden = true;
 
     
     /***********************/
@@ -179,31 +183,31 @@
 
 - (IBAction)didSelectCountry:(UIButton *)sender {
     
-    [_countryTextField becomeFirstResponder];
+    [countryTextField becomeFirstResponder];
     
 }
 
 - (IBAction)didSelectStateTapped:(UIButton *)sender {
     
-    [_stateTextField becomeFirstResponder];
+    [stateTextField becomeFirstResponder];
     
 }
 - (IBAction)didSelectDistrict:(UIButton *)sender {
     
-    [_districtTextField becomeFirstResponder];
+    [districtTextField becomeFirstResponder];
     
 }
 - (IBAction)didSelectGender:(UIButton *)sender {
     
-    [_genderTextField becomeFirstResponder];
+    [genderTextField becomeFirstResponder];
     
 }
 
 -(void)didTapDone {
-    [_genderTextField resignFirstResponder];
-    [_districtTextField resignFirstResponder];
-    [_stateTextField resignFirstResponder];
-    [_countryTextField resignFirstResponder];
+    [genderTextField resignFirstResponder];
+    [districtTextField resignFirstResponder];
+    [stateTextField resignFirstResponder];
+    [countryTextField resignFirstResponder];
 }
 
 //-(void)checkTextField{
@@ -224,6 +228,20 @@
 /* button method */
 /* End */
 /***********************/
+-(void)checkTextField {
+    if (!registerButton.userInteractionEnabled) {
+        if ([userName hasText] && [mobileNumber hasText] && [password hasText] && [countryTextField hasText] && genderTextField.hasText && stateTextField.hasText && districtTextField.hasText) {
+            registerButton.userInteractionEnabled = true;
+            registerButton.hidden = false;
+            printf("i am running isnide check textfield");
+        }
+        else {
+            registerButton.userInteractionEnabled = false;
+        }
+    }
+}
+
+
 
 
 
@@ -258,12 +276,14 @@
     [mobileNumber resignFirstResponder];
     [userName resignFirstResponder];
     [password resignFirstResponder];
-    [_countryTextField resignFirstResponder];
-    [_stateTextField resignFirstResponder];
-    [_districtTextField resignFirstResponder];
-    [_genderTextField resignFirstResponder];
+    [countryTextField resignFirstResponder];
+    [stateTextField resignFirstResponder];
+    [districtTextField resignFirstResponder];
+    [genderTextField resignFirstResponder];
     
 }
+
+
 
 /***********************/
 /* keyboard hide action on touch */
@@ -277,21 +297,46 @@
 /***********************/
 -(bool)textFieldShouldReturn:(UITextField *)textField {
     
+//    if ([textField hasText])
+//    {
+//        //do your work
+//        NSLog(@"length %lu", textField.text.length);
+////        NSLog(@"length %@", textField.text != nil);
+////        NSLog(@"length %@", [textField.text isEqual:@""] );
+//        NSLog(@"I have a number");
+//        [self checkTextField];
+//    }
+//    else
+//    {
+//        NSLog(@"I don't have a number");
+//        //through error
+//        registerButton.userInteractionEnabled = false;
+//
+//    }
+    
+    return [textField resignFirstResponder];
+    
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
     if ([textField hasText])
     {
         //do your work
         NSLog(@"length %lu", textField.text.length);
-//        NSLog(@"length %@", textField.text != nil);
-//        NSLog(@"length %@", [textField.text isEqual:@""] );
+        //        NSLog(@"length %@", textField.text != nil);
+        //        NSLog(@"length %@", [textField.text isEqual:@""] );
         NSLog(@"I have a number");
+        [self checkTextField];
     }
     else
     {
         NSLog(@"I don't have a number");
         //through error
+        registerButton.userInteractionEnabled = false;
+        
     }
-    
-    return [textField resignFirstResponder];
     
 }
 /***********************/
@@ -352,18 +397,24 @@
     
     switch (pickerView.tag) {
         case 1:
-            _countryTextField.text = country[row];
+            
+            countryTextField.text = country[row];
+            [self checkTextField];
+            
             break;
             
         case 2:
-            _stateTextField.text =  state[row];
+            stateTextField.text =  state[row];
+            [self checkTextField];
             break;
             
         case 3:
-            _districtTextField.text =  district[row];
+            districtTextField.text =  district[row];
+            [self checkTextField];
             break;
         case 4:
-            _genderTextField.text = gender[row];
+            genderTextField.text = gender[row];
+            [self checkTextField];
             break;
             
     }

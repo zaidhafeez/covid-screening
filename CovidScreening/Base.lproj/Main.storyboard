@@ -54,6 +54,9 @@
                                 </state>
                                 <connections>
                                     <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIa-qx-WKK"/>
+                                    <segue destination="yPw-ag-RLM" kind="popoverPresentation" popoverAnchorView="0OT-v5-lcd" id="bnI-hF-FDJ">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkN-8e-I2C">
