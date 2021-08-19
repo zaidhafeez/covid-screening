@@ -18,6 +18,7 @@
 		1C3EC71326B278F80025AE03 /* CovidScreeningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC71226B278F80025AE03 /* CovidScreeningUITests.m */; };
 		1C7E3DD026C7ABC400D8477D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */; };
 		1C8236BE26B90C390091B7A0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8236BD26B90C390091B7A0 /* SecondViewController.m */; };
+		1CDFA0D926CE68EB00B61193 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDFA0D826CE68EB00B61193 /* WebService.m */; };
 		1CEDD57826BA73A300C45940 /* ScreeningQA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEDD57726BA73A300C45940 /* ScreeningQA.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C8236BC26B90C390091B7A0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		1C8236BD26B90C390091B7A0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1CDFA0D726CE68EB00B61193 /* WebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
+		1CDFA0D826CE68EB00B61193 /* WebService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
 		1CEDD57626BA73A300C45940 /* ScreeningQA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreeningQA.h; sourceTree = "<group>"; };
 		1CEDD57726BA73A300C45940 /* ScreeningQA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreeningQA.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +119,8 @@
 				1C3EC6EC26B278F10025AE03 /* AppDelegate.m */,
 				1CEDD57626BA73A300C45940 /* ScreeningQA.h */,
 				1CEDD57726BA73A300C45940 /* ScreeningQA.m */,
+				1CDFA0D726CE68EB00B61193 /* WebService.h */,
+				1CDFA0D826CE68EB00B61193 /* WebService.m */,
 				1C0650BF26B424AD00898FC6 /* GradientView.h */,
 				1C0650C026B424AD00898FC6 /* GradientView.m */,
 				1C3EC6EE26B278F10025AE03 /* ViewController.h */,
@@ -286,6 +291,7 @@
 				1C3EC6F626B278F10025AE03 /* CovidScreening.xcdatamodeld in Sources */,
 				1C3EC6F026B278F10025AE03 /* ViewController.m in Sources */,
 				1C3EC6FE26B278F80025AE03 /* main.m in Sources */,
+				1CDFA0D926CE68EB00B61193 /* WebService.m in Sources */,
 				1C3EC6ED26B278F10025AE03 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

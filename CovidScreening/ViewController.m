@@ -14,6 +14,8 @@
     NSArray *state;
     NSArray *district;
     NSArray *gender;
+    
+    NSString *strApi;
 }
 
 @end
@@ -210,6 +212,34 @@
     [countryTextField resignFirstResponder];
 }
 
+-(void)requestData {
+    
+    NSLog(@"I am Running");
+    
+    strApi = [NSString stringWithFormat:@"http://connect2mfi.org/covid_screening/index.php/api/CovidScreening/UserInformation"];
+    NSString * dbstr = [NSString stringWithFormat:@"name = %@&email=%@&age=%@&gender=%@&distric %@&province=%@&country=%@,",userName.text,password.text,mobileNumber.text,genderTextField.text,districtTextField.text,stateTextField.text,countryTextField.text];
+    
+//    NSLog(@" hello brother %@", dbstr);
+    
+    [WebService executeQuery:strApi premeter:dbstr withblock:^(NSData * dbdata, NSError *error) {
+        
+//         NSLog(@"Data: %@", dbdata);
+//        NSString *hello = [hello dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSUTF8StringEncoding];
+        NSLog(@"Data1 %@,  error %@", someString, error);
+        if (dbdata!=nil)
+        {
+            NSLog(@"I am running2");
+            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:0 error:nil];
+            NSLog(@"Response Data: %@", maindic);
+        }
+        
+    }];
+    
+    
+    
+}
+
 //-(void)checkTextField{
 //    NSLog(@"checkfield running");
 //    if(!registerButton.userInteractionEnabled){
@@ -260,7 +290,7 @@
 //        NSLog(@"i am else");
 //    }
     
-    NSLog(@"Now I am running");
+    [self requestData];
     
     
     
