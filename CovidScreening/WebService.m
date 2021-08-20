@@ -9,7 +9,7 @@
 #import "WebService.h"
 
 @implementation WebService
-+(void)executeQuery:(NSString *)URL premeter:(NSString *)premeter1 withblock:(void (^)(NSData * _Nonnull, NSError * _Nonnull))block
++(void)executeQuery:(NSString *)URL premeter:(NSMutableArray *)premeter1 withblock:(void (^)(NSData * _Nonnull, NSError * _Nonnull))block
 {
     
     NSURLSessionConfiguration *defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -20,9 +20,9 @@
     NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:requestURL];
     
     //NSString *pram = premeter1;
-    
+    NSData *jsondta = [NSJSONSerialization dataWithJSONObject:premeter1 options:kNilOptions error:nil];
     [mutableRequest setHTTPMethod:@"POST"];
-    [mutableRequest setHTTPBody:[premeter1 dataUsingEncoding:NSUTF8StringEncoding]];
+    [mutableRequest setHTTPBody:jsondta];
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:mutableRequest completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
         

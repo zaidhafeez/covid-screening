@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WebService : NSObject
 
-+(void)executeQuery:(NSString *)url premeter:(NSString *)premeter withblock:(void(^)(NSData *, NSError*))block;
++(void)executeQuery:(NSString *)url premeter:(NSMutableArray *)premeter1 withblock:(void(^)(NSData *, NSError*))block;
 
 @end
 

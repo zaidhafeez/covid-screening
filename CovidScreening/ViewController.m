@@ -16,6 +16,8 @@
     NSArray *gender;
     
     NSString *strApi;
+    NSMutableArray *dataSending;
+    
 }
 
 @end
@@ -217,20 +219,78 @@
     NSLog(@"I am Running");
     
     strApi = [NSString stringWithFormat:@"http://connect2mfi.org/covid_screening/index.php/api/CovidScreening/UserInformation"];
-    NSString * dbstr = [NSString stringWithFormat:@"name = %@&email=%@&age=%@&gender=%@&distric %@&province=%@&country=%@,",userName.text,password.text,mobileNumber.text,genderTextField.text,districtTextField.text,stateTextField.text,countryTextField.text];
     
-//    NSLog(@" hello brother %@", dbstr);
+    NSString *q1 = @"2";
+    NSString *q2 = @"2";
+    NSString *q3 = @"2";
+    NSString *q4 = @"2";
+//    NSString *q5 = @"2";
+//    NSString *q6 = @"2";
+//    NSString *q7 = @"2";
+//    NSString *q8 = @"2";
+//    NSString *q9 = @"2";
+//    NSString *q10 = @"2";
+//    NSString *q11 = @"2";
+//    NSString *q12 = @"2";
+//    NSString *q13 = @"2";
+//    NSString *q14 = @"2";
+//    NSString *q15 = @"2";
+//    NSString *q16 = @"2";
+    NSString *q17 = @"2";
+//    NSString *q18 = @"2";
+//    NSString *file = @"12";
     
-    [WebService executeQuery:strApi premeter:dbstr withblock:^(NSData * dbdata, NSError *error) {
+//    NSString *dbstr = [NSString stringWithFormat:@"name = %@&email=%@&age=%@&gender=%@&distric %@&province=%@&country=%@question1=%@question2=%@question3=%@question4=%@question5=%@question6=%@question7=%@question8=%@question9=%@question10=%@question11=%@question12=%@ques1=%@ques2=%@ques3=%@ques4=%@ques5=%@ques6=%@file=%@",userName.text,password.text,mobileNumber.text,genderTextField.text,districtTextField.text,stateTextField.text,countryTextField.text,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,file];
+    
+    NSMutableDictionary *dataSend = [[NSMutableDictionary alloc] init];
+    dataSend[@"name"] = userName.text;
+    dataSend[@"email"] = password.text;
+    dataSend[@"age"] = mobileNumber.text;
+    
+    dataSend[@"gender"] = genderTextField.text;
+    dataSend[@"distric"] = districtTextField.text;
+    dataSend[@"province"] = stateTextField.text;
+    dataSend[@"country"] = countryTextField.text;
+    
+    dataSend[@"question1"] = q1;
+    dataSend[@"question2"] = q2;
+    dataSend[@"question3"] = q3;
+    dataSend[@"question4"] = q4;
+    dataSend[@"question5"] = q4;
+    dataSend[@"question6"] = q3;
+    dataSend[@"question7"] = q2;
+    dataSend[@"question8"] = q3;
+    dataSend[@"question9"] = q4;
+    dataSend[@"question10"] = q4;
+    dataSend[@"question11"] = q1;
+    dataSend[@"question12"] = q2;
+    
+    dataSend[@"ques1"] = q1;
+    dataSend[@"ques2"] = q2;
+    dataSend[@"ques3"] = q3;
+    dataSend[@"ques4"] = q4;
+    dataSend[@"ques5"] = q4;
+    dataSend[@"ques6"] = q3;
+    dataSend[@"file"] = q17;
+
+    dataSending = [[NSMutableArray alloc] initWithObjects:dataSend, nil];
+    
+//  NSLog(@" hello brother %@", dbstr);
+    
+    [WebService executeQuery:strApi premeter:dataSending withblock:^(NSData * dbdata, NSError *error) {
         
 //         NSLog(@"Data: %@", dbdata);
 //        NSString *hello = [hello dataUsingEncoding:NSUTF8StringEncoding];
-        NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSUTF8StringEncoding];
-        NSLog(@"Data1 %@,  error %@", someString, error);
+        NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSISOLatin1StringEncoding];
+        NSData *dataConvert = [someString dataUsingEncoding:NSUTF8StringEncoding];
+//        NSLog(@"Data1 %@,  error %@", someString, error);
         if (dbdata!=nil)
         {
-            NSLog(@"I am running2");
-            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:0 error:nil];
+            NSLog(@"I am running2=%@",dbdata);
+            NSMutableDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dataConvert options:kNilOptions error:nil];
+//            NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchivedObjecto:dbdata];
+//            NSArray* latestLoans = [maindic objectForKey:@"email"];
+
             NSLog(@"Response Data: %@", maindic);
         }
         
@@ -260,6 +320,7 @@
 /***********************/
 -(void)checkTextField {
     if (!registerButton.userInteractionEnabled) {
+        
         if ([userName hasText] && [mobileNumber hasText] && [password hasText] && [countryTextField hasText] && genderTextField.hasText && stateTextField.hasText && districtTextField.hasText) {
             registerButton.userInteractionEnabled = true;
             registerButton.hidden = false;
