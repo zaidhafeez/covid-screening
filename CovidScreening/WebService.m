@@ -25,17 +25,16 @@
     [mutableRequest setHTTPBody:jsondta];
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:mutableRequest completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+    
+//        NSLog(@"respnseurl %@", response);
         
-        NSLog(@"respnseurl %@", response);
-        if([data length]>0){
-             NSLog(@"Yes, i am running bro");
-        }
         if(data != nil){
             block(data, error);
-            NSLog(@"Yes, i am running bro");
+            NSLog(@"I am running after response data %@", block);
         }
         else{
             block(data, error);
+            NSLog(@"And i am not running");
         }
         
     }];

@@ -239,10 +239,12 @@
     NSString *q17 = @"2";
 //    NSString *q18 = @"2";
 //    NSString *file = @"12";
+//    int record_id;
     
 //    NSString *dbstr = [NSString stringWithFormat:@"name = %@&email=%@&age=%@&gender=%@&distric %@&province=%@&country=%@question1=%@question2=%@question3=%@question4=%@question5=%@question6=%@question7=%@question8=%@question9=%@question10=%@question11=%@question12=%@ques1=%@ques2=%@ques3=%@ques4=%@ques5=%@ques6=%@file=%@",userName.text,password.text,mobileNumber.text,genderTextField.text,districtTextField.text,stateTextField.text,countryTextField.text,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,file];
     
     NSMutableDictionary *dataSend = [[NSMutableDictionary alloc] init];
+    dataSend[@"record_id"] = [NSNumber numberWithInt:3];
     dataSend[@"name"] = userName.text;
     dataSend[@"email"] = password.text;
     dataSend[@"age"] = mobileNumber.text;
@@ -281,17 +283,21 @@
         
 //         NSLog(@"Data: %@", dbdata);
 //        NSString *hello = [hello dataUsingEncoding:NSUTF8StringEncoding];
-        NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSISOLatin1StringEncoding];
-        NSData *dataConvert = [someString dataUsingEncoding:NSUTF8StringEncoding];
+//        NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSISOLatin1StringEncoding];
+//        NSData *dataConvert = [someString dataUsingEncoding:NSUTF8StringEncoding];
 //        NSLog(@"Data1 %@,  error %@", someString, error);
         if (dbdata!=nil)
         {
-            NSLog(@"I am running2=%@",dbdata);
-            NSMutableDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dataConvert options:kNilOptions error:nil];
+            NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSUTF8StringEncoding];
+            
+//            NSData *dataConvert = [someString dataUsingEncoding:NSUTF8StringEncoding];
+//            NSLog(@"I am running2=%@",dbdata);
+//            NSArray *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
+//         NSString *someString = [[NSString alloc] initWithData:dbdata encoding:NSUTF8StringEncoding];
 //            NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchivedObjecto:dbdata];
-//            NSArray* latestLoans = [maindic objectForKey:@"email"];
+//            NSMutableArray *latestLoans = [[NSMutableArray alloc] initWithObjects:maindic, nil];
 
-            NSLog(@"Response Data: %@", maindic);
+            NSLog(@"Response Data: %@", someString);
         }
         
     }];
