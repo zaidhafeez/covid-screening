@@ -98,5 +98,20 @@
         abort();
     }
 }
+//+(NSManagedObjectContext *)managedObjectContext {
+//    
+//    
+//    NSManagedObjectContext *context = nil;
+//    id delegate = [[UIApplication sharedApplication] delegate];
+//    
+//    NSLog(@"hello world");
+//    if ([delegate performSelector:@selector(managedObjectContext)]) {
+//        
+//        NSLog(@"hello world if");
+//        context = [delegate managedObjectContext];
+//    }
+//    
+//    return context;
+//}
 
 @end

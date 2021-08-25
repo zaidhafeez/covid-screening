@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <CoreData/CoreData.h>
 @interface ViewController ()
 {
     NSArray *country;
@@ -357,6 +357,8 @@
 //        NSLog(@"i am else");
 //    }
     
+    [self save];
+    
     [self requestData];
     
     
@@ -523,6 +525,61 @@
 /* Assigning values in  different picker view from different array*/
 /***********************/
 
+/*
+This method allows us to retrieve the managed object context from the AppDelegate. Later we’ll use the context to save the device data.
+*/
+
+//-(NSManagedObjectContext *)managedObjectContext {
+
+    
+//    NSManagedObjectContext *context = nil;
+    
+//////    id delegate = [[UIApplication sharedApplication] delegate];
+////
+////    NSLog(@"hello world");
+//    if ([delegate respondsToSelector:@selector(managedObjectContext)]) {
+////
+////       NSLog(@"hello world if");
+////        context = [delegate managedObjectContext];
+//    }
+    
+    
+    
+    
+//    return context;
+    
+//}
+
+-(void)save {
+
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSManagedObject *newRegisteration = [NSEntityDescription insertNewObjectForEntityForName:@"Registeration" inManagedObjectContext:context];
+    
+    [newRegisteration setValue:userName forKey:@"name"];
+    [newRegisteration setValue:password forKey:@"password"];
+    [newRegisteration setValue:mobileNumber forKey:@"mobileNumber"];
+    [newRegisteration setValue:genderTextField forKey:@"gender"];
+    [newRegisteration setValue:countryTextField  forKey:@"country"];
+    [newRegisteration setValue:stateTextField forKey:@"state"];
+    [newRegisteration setValue:districtTextField forKey:@"district"];
+    
+     NSError *error = nil;
+    
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    
+    // create a new managed object
+    
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    //     Get the new view controller using [segue destinationViewController].
+//    //     Pass the selected object to the new view controller.
+//
+//
+//}
 
 
 

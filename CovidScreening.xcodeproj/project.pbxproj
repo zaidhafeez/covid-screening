@@ -18,6 +18,10 @@
 		1C3EC71326B278F80025AE03 /* CovidScreeningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EC71226B278F80025AE03 /* CovidScreeningUITests.m */; };
 		1C7E3DD026C7ABC400D8477D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */; };
 		1C8236BE26B90C390091B7A0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8236BD26B90C390091B7A0 /* SecondViewController.m */; };
+		1C856CDB26D64A8400CB4F2E /* RegistrationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C856CD926D64A8300CB4F2E /* RegistrationModel.xcdatamodeld */; };
+		1C856CE126D6530F00CB4F2E /* RegisterationViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C856CE026D6530F00CB4F2E /* RegisterationViewControllerTableViewController.m */; };
+		1C856CE626D66F4E00CB4F2E /* Registeration+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C856CE326D66F4E00CB4F2E /* Registeration+CoreDataClass.m */; };
+		1C856CE726D66F4E00CB4F2E /* Registeration+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C856CE526D66F4E00CB4F2E /* Registeration+CoreDataProperties.m */; };
 		1CDFA0D926CE68EB00B61193 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDFA0D826CE68EB00B61193 /* WebService.m */; };
 		1CEDD57826BA73A300C45940 /* ScreeningQA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEDD57726BA73A300C45940 /* ScreeningQA.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,13 @@
 		1C7E3DCF26C7ABC400D8477D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C8236BC26B90C390091B7A0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		1C8236BD26B90C390091B7A0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1C856CDA26D64A8300CB4F2E /* RegistrationModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RegistrationModel.xcdatamodel; sourceTree = "<group>"; };
+		1C856CDF26D6530F00CB4F2E /* RegisterationViewControllerTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterationViewControllerTableViewController.h; sourceTree = "<group>"; };
+		1C856CE026D6530F00CB4F2E /* RegisterationViewControllerTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterationViewControllerTableViewController.m; sourceTree = "<group>"; };
+		1C856CE226D66F4E00CB4F2E /* Registeration+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Registeration+CoreDataClass.h"; sourceTree = "<group>"; };
+		1C856CE326D66F4E00CB4F2E /* Registeration+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Registeration+CoreDataClass.m"; sourceTree = "<group>"; };
+		1C856CE426D66F4E00CB4F2E /* Registeration+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Registeration+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1C856CE526D66F4E00CB4F2E /* Registeration+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Registeration+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1CDFA0D726CE68EB00B61193 /* WebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
 		1CDFA0D826CE68EB00B61193 /* WebService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
 		1CEDD57626BA73A300C45940 /* ScreeningQA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreeningQA.h; sourceTree = "<group>"; };
@@ -115,14 +126,21 @@
 		1C3EC6EA26B278F10025AE03 /* CovidScreening */ = {
 			isa = PBXGroup;
 			children = (
+				1C856CE226D66F4E00CB4F2E /* Registeration+CoreDataClass.h */,
+				1C856CE326D66F4E00CB4F2E /* Registeration+CoreDataClass.m */,
+				1C856CE426D66F4E00CB4F2E /* Registeration+CoreDataProperties.h */,
+				1C856CE526D66F4E00CB4F2E /* Registeration+CoreDataProperties.m */,
 				1C3EC6EB26B278F10025AE03 /* AppDelegate.h */,
 				1C3EC6EC26B278F10025AE03 /* AppDelegate.m */,
+				1C856CD926D64A8300CB4F2E /* RegistrationModel.xcdatamodeld */,
 				1CEDD57626BA73A300C45940 /* ScreeningQA.h */,
 				1CEDD57726BA73A300C45940 /* ScreeningQA.m */,
 				1CDFA0D726CE68EB00B61193 /* WebService.h */,
 				1CDFA0D826CE68EB00B61193 /* WebService.m */,
 				1C0650BF26B424AD00898FC6 /* GradientView.h */,
 				1C0650C026B424AD00898FC6 /* GradientView.m */,
+				1C856CDF26D6530F00CB4F2E /* RegisterationViewControllerTableViewController.h */,
+				1C856CE026D6530F00CB4F2E /* RegisterationViewControllerTableViewController.m */,
 				1C3EC6EE26B278F10025AE03 /* ViewController.h */,
 				1C3EC6EF26B278F10025AE03 /* ViewController.m */,
 				1C8236BC26B90C390091B7A0 /* SecondViewController.h */,
@@ -286,8 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CEDD57826BA73A300C45940 /* ScreeningQA.m in Sources */,
+				1C856CE126D6530F00CB4F2E /* RegisterationViewControllerTableViewController.m in Sources */,
 				1C8236BE26B90C390091B7A0 /* SecondViewController.m in Sources */,
+				1C856CDB26D64A8400CB4F2E /* RegistrationModel.xcdatamodeld in Sources */,
+				1C856CE726D66F4E00CB4F2E /* Registeration+CoreDataProperties.m in Sources */,
 				1C0650C126B424AD00898FC6 /* GradientView.m in Sources */,
+				1C856CE626D66F4E00CB4F2E /* Registeration+CoreDataClass.m in Sources */,
 				1C3EC6F626B278F10025AE03 /* CovidScreening.xcdatamodeld in Sources */,
 				1C3EC6F026B278F10025AE03 /* ViewController.m in Sources */,
 				1C3EC6FE26B278F80025AE03 /* main.m in Sources */,
@@ -472,6 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = mySQ2.CovidScreening;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -492,6 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = mySQ2.CovidScreening;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -618,6 +642,16 @@
 			);
 			currentVersion = 1C3EC6F526B278F10025AE03 /* CovidScreening.xcdatamodel */;
 			path = CovidScreening.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		1C856CD926D64A8300CB4F2E /* RegistrationModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C856CDA26D64A8300CB4F2E /* RegistrationModel.xcdatamodel */,
+			);
+			currentVersion = 1C856CDA26D64A8300CB4F2E /* RegistrationModel.xcdatamodel */;
+			path = RegistrationModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

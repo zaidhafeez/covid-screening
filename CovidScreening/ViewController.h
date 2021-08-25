@@ -5,8 +5,9 @@
 //  Created by Subhi Quraishi on 29/07/21.
 //  Copyright © 2021 Subhi Quraishi. All rights reserved.
 //
-
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "GradientView.h"
 #import "WebService.h"
 @interface ViewController : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
