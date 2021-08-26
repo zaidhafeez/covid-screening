@@ -8,6 +8,7 @@
 
 #import "RegisterationViewControllerTableViewController.h"
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
 @interface RegisterationViewControllerTableViewController ()
 @property(strong)NSMutableArray *RegistrationDetails;
@@ -18,11 +19,13 @@
 - (NSManagedObjectContext *)managedObjectContext
 {
     NSLog(@"Registration managed object");
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
+//    NSManagedObjectContext *context = nil;
+//    id delegate = [[UIApplication sharedApplication] delegate];
+//    if ([delegate performSelector:@selector(managedObjectContext)]) {
+//        context = [delegate managedObjectContext];
+//    }
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [[delegate persistentContainer] viewContext];
     return context;
     
 }
@@ -42,7 +45,7 @@
     [super viewDidAppear: animated];
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"registeration"];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Detail"];
     self.RegistrationDetails = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
@@ -63,6 +66,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *CellIdentifier = @"Cell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...

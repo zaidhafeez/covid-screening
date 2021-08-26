@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 @interface ViewController ()
 {
     NSArray *country;
@@ -529,45 +530,63 @@
 This method allows us to retrieve the managed object context from the AppDelegate. Later we’ll use the context to save the device data.
 */
 
-//-(NSManagedObjectContext *)managedObjectContext {
+-(NSManagedObjectContext *)managedObjectContext {
 
-    
+
 //    NSManagedObjectContext *context = nil;
-    
-//////    id delegate = [[UIApplication sharedApplication] delegate];
-////
-////    NSLog(@"hello world");
-//    if ([delegate respondsToSelector:@selector(managedObjectContext)]) {
-////
-////       NSLog(@"hello world if");
-////        context = [delegate managedObjectContext];
+
+
+
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//
+    NSManagedObjectContext *context = [[delegate persistentContainer] viewContext];
+
+//    id delegate = [[UIApplication sharedApplication] delegate];
+
+
+
+//    NSLog(@"hello world");
+//    if ([delegate performSelector:@selector(viewContext)]) {
+//
+//       NSLog(@"hello world if");
+//        context = [[delegate persistentContainer] viewContext];
+//        NSLog(@"hello world if1");
 //    }
-    
-    
-    
-    
-//    return context;
-    
-//}
+
+
+
+
+    return context;
+
+}
 
 -(void)save {
 
-    NSManagedObjectContext *context = [self managedObjectContext];
+    // NSManagedObjectContext *context = [self managedObjectContext];
     
-    NSManagedObject *newRegisteration = [NSEntityDescription insertNewObjectForEntityForName:@"Registeration" inManagedObjectContext:context];
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    [newRegisteration setValue:userName forKey:@"name"];
-    [newRegisteration setValue:password forKey:@"password"];
-    [newRegisteration setValue:mobileNumber forKey:@"mobileNumber"];
-    [newRegisteration setValue:genderTextField forKey:@"gender"];
-    [newRegisteration setValue:countryTextField  forKey:@"country"];
-    [newRegisteration setValue:stateTextField forKey:@"state"];
-    [newRegisteration setValue:districtTextField forKey:@"district"];
+    NSManagedObjectContext *context = [[delegate persistentContainer] viewContext];
+    
+    NSManagedObject *newRegisteration = [NSEntityDescription insertNewObjectForEntityForName:@"Detail" inManagedObjectContext:context];
+    
+    [newRegisteration setValue:userName.text forKey:@"name"];
+    [newRegisteration setValue:password.text forKey:@"password"];
+    [newRegisteration setValue:mobileNumber.text forKey:@"mobileNumber"];
+    [newRegisteration setValue:genderTextField.text forKey:@"gender"];
+    [newRegisteration setValue:countryTextField.text  forKey:@"country"];
+    [newRegisteration setValue:stateTextField.text forKey:@"state"];
+    [newRegisteration setValue:districtTextField.text forKey:@"district"];
     
      NSError *error = nil;
     
     if (![context save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    else {
+        
+        NSLog(@"Data is saved");
+        
     }
     
     // create a new managed object

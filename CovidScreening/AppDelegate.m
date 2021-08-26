@@ -20,6 +20,8 @@
     
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,35)];
     
+    NSLog(@"%@",[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory  inDomains:NSUserDomainMask] lastObject]);
+    
     
     return YES;
 }
