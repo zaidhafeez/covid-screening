@@ -11,7 +11,9 @@
 #import "AppDelegate.h"
 
 @interface RegisterationViewControllerTableViewController ()
+
 @property(strong)NSMutableArray *RegistrationDetails;
+
 @end
 
 @implementation RegisterationViewControllerTableViewController
@@ -45,7 +47,9 @@
     [super viewDidAppear: animated];
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Detail"];
+    
     self.RegistrationDetails = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];

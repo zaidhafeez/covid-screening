@@ -54,9 +54,7 @@
                                 </state>
                                 <connections>
                                     <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIa-qx-WKK"/>
-                                    <segue destination="Rza-oc-9eD" kind="popoverPresentation" popoverAnchorView="0OT-v5-lcd" id="Qyg-Ts-CQm">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="yPw-ag-RLM" kind="show" id="BIZ-hz-hyD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkN-8e-I2C">
@@ -316,7 +314,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ctI-P3-tiM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6bB-9Y-Wh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" id="Rza-oc-9eD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
@@ -329,6 +326,7 @@
                         <segue destination="c64-2L-biD" kind="relationship" relationship="rootViewController" id="YJ1-tR-FZr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bB-9Y-Wh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1438" y="166"/>
         </scene>
