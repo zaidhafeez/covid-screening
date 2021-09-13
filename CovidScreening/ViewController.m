@@ -33,7 +33,7 @@
 /***********************/
 
 - (void)viewDidLoad {
-    
+//    fhgghgg
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    self.Main.backgroundColor = UIColor[(patternImage: UIImage(named: "background.png"))]
